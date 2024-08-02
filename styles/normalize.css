@@ -1,0 +1,89 @@
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1240,25,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  
+  :root {
+    --font--2: clamp(0.6944rem, 0.5882rem + 0.5314vi, 1rem);
+    --font--1: clamp(0.8333rem, 0.6884rem + 0.7246vi, 1.25rem);
+    --font-0: clamp(1rem, 0.8043rem + 0.9783vi, 1.5625rem);
+    --font-1: clamp(1.2rem, 0.938rem + 1.3098vi, 1.9531rem);
+    --font-2: clamp(1.44rem, 1.0917rem + 1.7416vi, 2.4414rem);
+    --font-3: clamp(1.728rem, 1.2676rem + 2.3022vi, 3.0518rem);
+    --font-4: clamp(2.0736rem, 1.468rem + 3.028vi, 3.8147rem);
+    --font-5: clamp(2.4883rem, 1.6953rem + 3.9653vi, 4.7684rem);
+    --color-1: #353535;
+    --color-2: #3C6E71;
+    --color-3: #FFFFFF;
+    --color-4: #ffba08;
+    --color-5: #bc6c25;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-3);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5, 
+  h6{
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin:0;
+  }
+
+  p,
+  a,
+  label,
+  li,
+  button{
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-size: var(--font-1);
+    margin: 0;
+  }
+
+    
+  a {
+    text-decoration: none;
+    color: var(--color-2);
+  }
+  a:visited{
+    color: #bc6c25;
+  }
+  a:hover{
+    color: #bc6c25;
+  }
+
+  li{
+    list-style-type: none;
+  }
+  
+  input {
+    outline:#bc6c25 1px;
+    border: 1px solid var(--color-2);
+    font-size: var(--font--2);
+    padding: 0.3rem 0;
+  }
+
+  input:focus{
+    border: 2px solid var(--color-5);
+  }
+
+  img{
+    width: 100%;
+  }

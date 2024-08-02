@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pool 8 ball</title>
+    <!-- icon -->
+    <link rel="shortcut icon" href="/assets/pool-8.svg" type="image/x-icon" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="/styles/normalize.css" />
+    <link rel="stylesheet" href="/styles/flexGrid.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <header class="d-flex flex-row align-items-center justify-content-around">
+      <div class="logoImg"><img src="/assets/pool-8.svg" alt="" /></div>
+      <nav>
+        <a href="#reserveTable"> <i class="fa-solid fa-book"  id="reserveBtn"></i></a>
+        <a href="#saveUser"><i class="fa-sharp fa-solid fa-user-plus"  id="saveUser"></i></a>
+      </nav>
+    </header>
+
+    <main class="d-flex justify-content-center flex-column align-items-center">
+      <div class="hero row align-items-center justify-content-center">
+        <div class="hero-txt col-12 col-md-6">
+          <h1>Torneo</h1>
+          <p>de billar</p>
+          <p class="small">acumula puntos para ganar</p>
+        </div>
+        <div class="hero-img bgrImg">
+          <button class="hero-btn button">Registrar jugador</button>
+        </div>
+      </div>
+      <section class="trophyInfo row">
+        <div class="trophyImg col-12 bgrImg"></div>
+        <div class="trophyInfo-txt col-12">
+          <p>Te invitamos a ganar</p>
+          <button class="button">registra tu mesa</button>
+        </div>
+      </section>
+      <section class="resultsTable">
+        <h1>Resultados</h1>
+        <div class="playerPointsContainer">
+          <h2 class="playerPosition">#1</h2>
+          <h3 class="playerName">Juan</h3>
+          <p class="playerPoints">300</p>
+        </div>
+      </section>
+      <section id="modal" class="hidden modal d-flex flex-column justify-content-center align-items-center">
+
+      </section>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/cf733db6d2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="app.mjs"></script>
+  </body>
+</html>

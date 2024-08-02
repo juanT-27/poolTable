@@ -1,0 +1,301 @@
+/* reusable */
+/* displayFlex */
+.d-flex {
+  display: flex;
+}
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+.justify-content-end {
+  justify-content: flex-end;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.justify-content-around {
+  justify-content: space-around;
+}
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+.align-items-end {
+  align-items: flex-end;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-baseline {
+  align-items: baseline;
+}
+.align-items-stretch {
+  align-items: stretch;
+}
+
+.align-content-start {
+  align-content: flex-start;
+}
+.align-content-end {
+  align-content: flex-end;
+}
+.align-content-center {
+  align-content: center;
+}
+.align-content-between {
+  align-content: space-between;
+}
+.align-content-around {
+  align-content: space-around;
+}
+.align-content-stretch {
+  align-content: stretch;
+}
+
+.align-self-auto {
+  align-self: auto;
+}
+.align-self-start {
+  align-self: flex-start;
+}
+.align-self-end {
+  align-self: flex-end;
+}
+.align-self-center {
+  align-self: center;
+}
+.align-self-baseline {
+  align-self: baseline;
+}
+.align-self-stretch {
+  align-self: stretch;
+}
+
+h1{
+  font-size: var(--font-4);
+}
+h2{
+  font-size: var(--font-3);
+}
+
+p{
+  font-size: var(--font-1);
+}
+
+.hidden{
+visibility:hidden;
+}
+
+/* Mobile first */
+/* reusable elements */
+
+.button {
+  background-color: var(--color-4);
+  border: 0 solid #e5e7eb;
+  color: var(--color-1);
+  padding: 0.75rem 1.65rem;
+  text-align: center;
+  width: 10rem;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: all ease-in-out 0.6s;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.button:hover {
+  width: 11rem;
+}
+
+.bgrImg {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* main */
+
+main {
+  border: 1px solid var(--color-2);
+}
+
+/* header */
+header {
+background-color: var(--color-3);
+padding: 0.5rem 0;  
+}
+
+header .logoImg {
+  width: 2rem;
+  height: 2rem;
+}
+
+nav a{ margin: 0 0.5rem;}
+
+/* heroSection */
+
+.hero {
+  margin: 1rem;
+}
+
+.hero-txt {
+  width: 15rem;
+  border: solid 1px var(--color-4);
+  border-radius: 2rem 2rem 0 0;
+  text-align: center;
+  background-color: var(--color-2);
+  padding: 1rem 0;
+}
+
+.hero-txt h1 {
+  font-size: var(--font-5);
+  color: var(--color-4);
+}
+
+.hero-txt p {
+  font-size: var(--font-1);
+}
+
+.hero-img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 0 0 2rem 2rem;
+  background-image: url(/assets/billiardTable.jpg);
+  background-size: cover;
+}
+
+.hero-img .button {
+  left: 2.5rem;
+  top: 5rem;
+}
+
+/* trophyInfo */
+.trophyInfo {
+  width: 80%;
+}
+.trophyImg {
+  border-radius: 2rem 0 2rem 0;
+  background-color: var(--color-2);
+  background-image: url(/assets/throphy.svg);
+  background-position: center;
+  background-size: contain;
+  height: 10rem;
+  padding: 2rem 0;
+}
+
+.trophyInfo-txt {
+  margin: 1rem 0;
+  border-radius: 2rem 0 2rem 0;
+  background-color: var(--color-4);
+  border: 1px solid var(--color-2);
+  text-align: center;
+}
+
+.trophyInfo button {
+  padding: 0.4rem;
+  margin-top: 1rem;
+  background-color: var(--color-2);
+  color: var(--color-3);
+}
+
+/* resultsTable */
+.resultsTable {
+  width: 80%;
+  max-width: 50rem;
+  border: solid 1px var(--color-4);
+}
+
+.resultsTable .playerPointsContainer {
+  width: 90%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 0.2rem solid var(--color-4);
+}
+
+/* modal */
+
+.modal{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: #353535be;
+ 
+}
+
+/* forms */
+
+form{
+  width: 15rem;
+  padding: 2rem 0;
+  background-color: var(--color-3);
+}
+
+.inputGroup{
+  width: 80%;
+  margin: 1rem 0;
+}
+
+.errors{
+  font-size: var(--font--1);
+}
+
+input{
+  width: 100%;
+}
+
+/* medias */
+
+@media screen and (min-width: 30em) {
+}
+@media screen and (min-width: 48em) {
+}
+@media screen and (min-width: 62em) {
+}
+@media screen and (min-width: 75em) {
+}

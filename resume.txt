@@ -1,0 +1,38 @@
+colors:
+color 1: #353535
+color 2: #3C6E71
+color 3: #FFFFFF
+color 4: #ffba08
+
+fonts 
+
+Titles 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+.archivo-black-regular {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.raleway-<uniquifier> {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+js code
+
+in the page the owner can rent the tables he is going to register the names of the person that rents it and the ones that play with him
+
+ Form:
+ of differents steps
+ first he select a table and the amount of people that are going to play 
+ and that information is saved in the database so in that way when the game ends the owner can register who won 
+
+ 20 points for renting a table, 50 points for winning in his table 
+ 

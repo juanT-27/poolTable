@@ -1,4 +1,4 @@
-import playersDB from "./app.mjs";
+// import playersDB from "./app.mjs";
 
 class Form {
   constructor(formId, inputGroup) {
@@ -57,12 +57,16 @@ class Form {
     inputs.forEach((input) => {
       if (input.type !== "submit") {
         let inputName = input.id;
-        newElement[inputName] = input.value;
+        if(input.type=== "number"){
+        newElement[inputName] = Number(input.value)
+        }else{
+          newElement[inputName] = input.value;
+        }
       }
     });
     newElement["points"]= 10;
-    obj.push(newElement);
-    console.log(newElement);
+    obj.addNewUser(newElement);
+    console.log(obj.getDb())
   }
 }
 

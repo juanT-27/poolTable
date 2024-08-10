@@ -20,41 +20,48 @@
   </head>
   <body>
     <header class="d-flex flex-row align-items-center justify-content-around">
-      <div class="logoImg"><img src="/assets/pool-8.svg" alt="" /></div>
+      <div class="logoImg"><img src="/assets/throphy.svg" alt="" /></div>
       <nav>
-        <a href="#reserveTable"> <i class="fa-solid fa-book"  id="reserveBtn"></i></a>
+        <a href="#reserveBtn"> <i class="fa-solid fa-book"  id="reserveBtn"></i></a>
         <a href="#saveUser"><i class="fa-sharp fa-solid fa-user-plus"  id="saveUser"></i></a>
       </nav>
     </header>
 
     <main class="d-flex justify-content-center flex-column align-items-center">
-      <div class="hero row align-items-center justify-content-center">
-        <div class="hero-txt col-12 col-md-6">
+      <div class="hero row justify-content-center align-items-center">
+        <div class="hero-txt col-12 col-sm-12 col-md-12 col-lg-6">
           <h1>Torneo</h1>
           <p>de billar</p>
           <p class="small">acumula puntos para ganar</p>
         </div>
-        <div class="hero-img bgrImg">
-          <button class="hero-btn button">Registrar jugador</button>
+        <div class="hero-img col-12 col-sm-12 col-md-12 col-lg-6 bgrImg">
+          <button class="hero-btn button" id="saveUser">Registrar jugador</button>
         </div>
       </div>
       <section class="trophyInfo row">
-        <div class="trophyImg col-12 bgrImg"></div>
-        <div class="trophyInfo-txt col-12">
-          <p>Te invitamos a ganar</p>
-          <button class="button">registra tu mesa</button>
+        <div class="trophyImg col-12 col-md-6 bgrImg"></div>
+        <div class="trophyInfo-txt col-12 col-md-6">
+          <p>Busca tu nombre</p>
+          <form action="">
+            <input type="search">
+            <input type="submit">
+          </form>
         </div>
       </section>
-      <section class="resultsTable">
+      <section class="resultsTable" id="positionsTable">
         <h1>Resultados</h1>
-        <div class="playerPointsContainer">
-          <h2 class="playerPosition">#1</h2>
-          <h3 class="playerName">Juan</h3>
-          <p class="playerPoints">300</p>
-        </div>
+        <template id="positionsTemplate">
+          <div class="playerPointsContainer">
+            <h2 class="playerPosition">#1</h2>
+            <h3 class="playerName">Juan</h3>
+            <p class="playerPoints">300</p>
+          </div>
+        </template>
+        
       </section>
       <section id="modal" class="hidden modal d-flex flex-column justify-content-center align-items-center">
-
+          <button id="closeModal">X</button>
+          <div id="modalContainer"></div>
       </section>
     </main>
     <script

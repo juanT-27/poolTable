@@ -1,5 +1,7 @@
 // import playersDB from "./app.mjs";
 
+import {showPositionsList, manageModal} from "./app.mjs";
+
 class Form {
   constructor(formId, inputGroup) {
     this.formId = formId;
@@ -66,7 +68,8 @@ class Form {
     });
     newElement["points"]= 10;
     obj.addNewUser(newElement);
-    console.log(obj.getDb())
+    showPositionsList();
+    manageModal(null, "hide" )
   }
 }
 
@@ -75,12 +78,8 @@ let userRegistInputs = [
   { label: "Numero de Id", type: "number", id: "userId", classes: [] },
 ];
 
-let reserveTable = [
-  { label: "Mesa", type: "number", id: "mesaId" },
-  { label: "cantidad de jugadores", type: "number", id: "#jugadores" },
-];
 
-const userRegistrationForm = new Form("saveUser", userRegistInputs);
-const reserveTableForm = new Form("reserveTable", reserveTable);
+const userRegistrationForm = new Form("saveUserForm", userRegistInputs);
+const reserveTableForm = new Form("reserveTableForm", reserveTable);
 const forms = { userRegistrationForm, reserveTableForm };
 export default forms;

@@ -148,9 +148,7 @@ visibility:hidden;
   height: calc(100% - 1px);
 }
 
-.button:hover {
-  width: 11rem;
-}
+
 
 .bgrImg {
   background-position: center;
@@ -160,18 +158,20 @@ visibility:hidden;
 /* main */
 
 main {
+  background-color: var(--color-1);
   border: 1px solid var(--color-2);
 }
 
 /* header */
 header {
-background-color: var(--color-3);
-padding: 0.5rem 0;  
+background-color: var(--color-2);
+color: var(--color-4);
+padding: 2rem 0;  
 }
 
 header .logoImg {
-  width: 2rem;
-  height: 2rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 nav a{ margin: 0 0.5rem;}
@@ -180,6 +180,8 @@ nav a{ margin: 0 0.5rem;}
 
 .hero {
   margin: 1rem;
+  width: 80%;
+  
 }
 
 .hero-txt {
@@ -246,8 +248,8 @@ nav a{ margin: 0 0.5rem;}
 .resultsTable {
   width: 80%;
   max-width: 50rem;
-  border: solid 1px var(--color-4);
-}
+  background-color: var(--color-2);
+  color: var(--color-3);}
 
 .resultsTable .playerPointsContainer {
   width: 90%;
@@ -264,8 +266,16 @@ nav a{ margin: 0 0.5rem;}
   width: 100vw;
   height: 100vh;
   position: absolute;
+  top: 0;
   background-color: #353535be;
- 
+}
+
+.modal button{
+  width: 2rem;
+  position: relative;
+  top: 0;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 /* forms */
@@ -292,10 +302,33 @@ input{
 /* medias */
 
 @media screen and (min-width: 30em) {
+  .hero-img,
+  .hero-txt{
+    width: 80%;
+    border-radius: 0 0;
+  }
+  header .logoImg {
+    width: 6rem;
+    height: 6rem;
+  }
+  form{
+    width: 80%;
+  }
 }
 @media screen and (min-width: 48em) {
+  .trophyImg, .trophyInfo-txt{
+    border-radius: 0 0;
+    height: 10rem;
+    margin: 2rem 0;
+  }
+ 
 }
 @media screen and (min-width: 62em) {
+  .hero-img{
+    height: 60vh;
+  }
+ 
 }
 @media screen and (min-width: 75em) {
+ 
 }

@@ -80,6 +80,5 @@ let userRegistInputs = [
 
 
 const userRegistrationForm = new Form("saveUserForm", userRegistInputs);
-const reserveTableForm = new Form("reserveTableForm", reserveTable);
-const forms = { userRegistrationForm, reserveTableForm };
+const forms = { userRegistrationForm};
 export default forms;

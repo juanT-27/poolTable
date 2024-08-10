@@ -60,13 +60,13 @@ html {
     
   a {
     text-decoration: none;
-    color: var(--color-2);
+    color: var(--color-4);
   }
   a:visited{
-    color: #bc6c25;
+    color: var(--color-3);
   }
   a:hover{
-    color: #bc6c25;
+    color: var(--color-5);
   }
 
   li{

@@ -1,3 +1,5 @@
+import { Alert } from "./app.mjs";
+
 class UserDb {
   constructor() {
     this.list = this.getDataBase() || [];
@@ -17,13 +19,20 @@ class UserDb {
   addNewUser(userInfo) {
     let userExists = this.findIndexById(userInfo.userId);
     if (userExists !== -1) {
-      console.log(`index ${userExists}`);
       this.list[userExists].points += 10;
       this.setDb();
+      let pointsAddedAlert= new Alert("puntos añadidos a jugador existente")
+      pointsAddedAlert.addAlertText();
+      pointsAddedAlert.changeState();
+      pointsAddedAlert.closeEvent();
       return;
     }
     this.list.push(userInfo);
     this.setDb();
+    let playerAddedAlert= new Alert("Jugador añadido")
+    playerAddedAlert.addAlertText();
+    playerAddedAlert.changeState();
+    playerAddedAlert.closeEvent();
   }
   updateDb(id, data) {
     let userIdx = this.findIndexById(id);

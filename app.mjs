@@ -5,14 +5,54 @@ const $modal = document.querySelector("#modal");
 const $modalContainer= document.querySelector("#modalContainer");
 const $positionsTable= document.querySelector("#positionsTable");
 const $positionTemplate= document.querySelector("#positionsTemplate");
+const $alert= document.querySelector("#alertElement")
+const showElement = (el)=>{
+  el.classList.remove("hidden")
+}
+const hideElement = (el)=>{
+  el.classList.add("hidden")
+}
+
+class Alert{
+  constructor(alertText){
+    this.nodeEl= $alert
+    this.alertText= alertText
+    this.alert= false
+  }
+  changeState (){
+    if(!this.alert){
+      this.alert= true
+      showElement(this.nodeEl)
+      this.nodeEl.classList.add("alertTransition")
+      console.log(this.alert)
+      return;
+    } else {
+      this.alert= false
+      hideElement(this.nodeEl)
+      this.nodeEl.classList.remove("alertTransition")
+      return;
+    }
+  }
+  addAlertText (){
+    let title= this.nodeEl.querySelector("h3")
+    title.textContent= this.alertText
+  }
+  closeEvent (){
+    let closeBtn= document.querySelector("#closeAlert")
+    closeBtn.addEventListener("click", ()=>{
+      this.changeState()
+    })
+  }
+}
+
 
 const manageModal = (formSelected,classAction)=>{
     if(classAction=== "show"){
-      $modal.classList.remove("hidden")
+      showElement($modal)
       $modalContainer.appendChild(formSelected.createForm())
     }
     else if(classAction==="hide" && formSelected===null ){
-      $modal.classList.add("hidden")
+      hideElement($modal)
       $modalContainer.innerHTML=""
     }
 }
@@ -55,6 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
       case "closeModal":
         manageModal(null, "hide")
         break;
+      // case "closeAlert":
+      //   hideElement($alert);
+      //   break;
       
     }
   });
@@ -64,13 +107,10 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     if (form.id === "saveUserForm"){
       forms.userRegistrationForm.getFormData(form, dataBase);}
-
-      else if(form.id=== "reserveTableForm"){
-        
-      }
+      
   });
 });
 
-export {showPositionsList, manageModal}
+export {showPositionsList, manageModal, Alert}
 
 

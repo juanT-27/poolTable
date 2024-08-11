@@ -1,6 +1,7 @@
 // import playersDB from "./app.mjs";
 
-import {showPositionsList, manageModal} from "./app.mjs";
+import { showPositionsList, manageModal, Alert } from "./app.mjs";
+
 
 class Form {
   constructor(formId, inputGroup) {
@@ -56,20 +57,23 @@ class Form {
   getFormData(form, obj) {
     let inputs = form.querySelectorAll("input");
     let newElement = {};
+    let db = obj.getDataBase();
     inputs.forEach((input) => {
       if (input.type !== "submit") {
         let inputName = input.id;
-        if(input.type=== "number"){
-        newElement[inputName] = Number(input.value)
-        }else{
+        if (input.type === "number") {
+          newElement[inputName] = Number(input.value);
+
+        } else {
           newElement[inputName] = input.value;
         }
       }
     });
-    newElement["points"]= 10;
+    newElement["points"] = 10;
     obj.addNewUser(newElement);
     showPositionsList();
-    manageModal(null, "hide" )
+    // showAlertElement("alertElement")
+    manageModal(null, "hide");
   }
 }
 
@@ -78,7 +82,6 @@ let userRegistInputs = [
   { label: "Numero de Id", type: "number", id: "userId", classes: [] },
 ];
 
-
 const userRegistrationForm = new Form("saveUserForm", userRegistInputs);
-const forms = { userRegistrationForm};
+const forms = { userRegistrationForm };
 export default forms;

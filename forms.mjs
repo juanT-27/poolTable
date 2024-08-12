@@ -11,7 +11,7 @@ class Form {
   }
   createForm() {
     let form = this.createElement("form", {
-      class: "row d-flex flex-column align-items-center",
+      class: "row d-flex flex-column align-items-center form",
       id: this.formId,
     });
 
@@ -78,7 +78,7 @@ class Form {
 }
 
 let userRegistInputs = [
-  { label: "Nombre", type: "text", id: "userName", classes: [] },
+  { label: "Nombre", type: "text", id: "userName", classes: [""] },
   { label: "Numero de Id", type: "number", id: "userId", classes: [] },
 ];
 

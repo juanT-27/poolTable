@@ -1,7 +1,7 @@
 // import playersDB from "./app.mjs";
 
 import { showPositionsList, manageModal, Alert } from "./app.mjs";
-
+import FinalDate from "./countDownTimer";
 
 class Form {
   constructor(formId, inputGroup) {
@@ -63,7 +63,6 @@ class Form {
         let inputName = input.id;
         if (input.type === "number") {
           newElement[inputName] = Number(input.value);
-
         } else {
           newElement[inputName] = input.value;
         }
@@ -72,16 +71,33 @@ class Form {
     newElement["points"] = 10;
     obj.addNewUser(newElement);
     showPositionsList();
-    // showAlertElement("alertElement")
+    showAlertElement("alertElement")
     manageModal(null, "hide");
+  }
+
+  getFormDate(form) {
+    let dateInput= form.querySelector("#finalDate").value
+    // let date= new FinalDate(dateInput)
+    // console.log(date.getDate())
   }
 }
 
 let userRegistInputs = [
-  { label: "Nombre", type: "text", id: "userName", classes: [""] },
-  { label: "Numero de Id", type: "number", id: "userId", classes: [] },
+  { label: "Nombre", type: "text", id: "userName" },
+  { label: "Numero de Id", type: "number", id: "userId" },
+];
+
+let finalDateinput = [
+  {
+    label: "selecciona una fecha",
+    type: "date",
+    id: "finalDate",
+    classes: [""],
+  },
 ];
 
 const userRegistrationForm = new Form("saveUserForm", userRegistInputs);
-const forms = { userRegistrationForm };
+const finalDateForm = new Form("pickDateForm", finalDateinput);
+
+const forms = { userRegistrationForm, finalDateForm };
 export default forms;

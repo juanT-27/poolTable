@@ -49,6 +49,9 @@ html {
   h3{
     font-size: var(--font-1);
   }
+  h4{
+    font-size: var(--font-1);
+  }
 
   p,
   a,

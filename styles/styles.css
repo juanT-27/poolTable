@@ -243,6 +243,21 @@ nav a {
   left: 2.5rem;
   top: 5rem;
 }
+/* COUNTER */
+.counterContainer{
+  width: 80%;
+  color: var(--color-2);
+  background-color: var(--color-3);
+  margin: 0 0 2rem 0;
+  padding: 1rem 0;
+}
+
+.counterContainer button{
+  background-color: var(--color-5);
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+}
 
 /* trophyInfo */
 .trophyInfo {

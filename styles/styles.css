@@ -252,12 +252,32 @@ nav a {
   padding: 1rem 0;
 }
 
+
 .counterContainer button{
   background-color: var(--color-5);
   width: 2rem;
   height: 2rem;
-  padding: 0.5rem;
+  text-align: center;
 }
+
+.counter{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem 0;
+  background-color: var(--color-2); 
+  color: var(--color-3);
+}
+
+.counter li{
+ width: 20%;
+ border: 2px solid black;
+ margin: 0.5rem;
+ text-align: center;
+}
+
 
 /* trophyInfo */
 .trophyInfo {
@@ -402,6 +422,27 @@ input {
   .resultsTable .playerPointsContainer {
     width: 30rem;
     flex-wrap: wrap;
+  }
+/* Counter */
+  .counter{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color-2); 
+    color: var(--color-3);
+  }
+  
+  .counter li{
+   border: 2px solid black;
+   margin: 1rem;
+  }
+
+  .counterContainer button{
+    width: 4rem;
+    height: 4rem;
   }
 }
 @media screen and (min-width: 62em) {

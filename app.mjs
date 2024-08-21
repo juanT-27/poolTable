@@ -1,3 +1,4 @@
+import {timerInitialize, setCountDownInterval, $counter} from "./countDownTimer.mjs";
 import forms from "./forms.mjs";
 import dataBase from "./localStorage.mjs";
 
@@ -6,6 +7,7 @@ const $modalContainer = document.querySelector("#modalContainer");
 const $positionsTable = document.querySelector("#positionsTable");
 const $positionTemplate = document.querySelector("#positionsTemplate");
 const $alert = document.querySelector("#alertElement");
+
 const showElement = (el) => {
   el.classList.remove("hidden");
 };
@@ -24,13 +26,10 @@ class Alert {
       this.alert = true;
       showElement(this.nodeEl);
       this.nodeEl.classList.add("alertTransition");
-      console.log(this.alert);
-      return;
     } else {
       this.alert = false;
       hideElement(this.nodeEl);
       this.nodeEl.classList.remove("alertTransition");
-      return;
     }
   }
   addAlertText() {
@@ -77,11 +76,21 @@ const showPositionsList = () => {
     $positionsTable.appendChild(element);
   });
 };
+const initializeAndStartTimer = () => {
+  // Ensure the countdown element exists and is ready
+  if ($counter) {
+    timerInitialize(); // Set the initial state
+    setCountDownInterval(); // Start the countdown
+  } else {
+    console.error("Counter element not found in the DOM.");
+  }
+};
 
 document.addEventListener("DOMContentLoaded", () => {
-  alert("connected")
   dataBase.setDb();
   showPositionsList();
+  initializeAndStartTimer();
+ 
 
   document.addEventListener("click", (e) => {
     let elem = e.target;
@@ -97,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         manageModal(null, "hide");
         break;
       case "editDateBtn":
-        manageModal(forms.finalDateForm, "show");
+        manageModal(forms.dateForm, "show");
     }
   });
 
@@ -106,10 +115,10 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     if (form.id === "saveUserForm") {
       forms.userRegistrationForm.getFormData(form, dataBase);
-    }else if(form.id=== "pickDateForm"){
-      forms.finalDateForm.getFormDate(form)
-  }
+    } else if (form.id === "pickDateForm") {
+      forms.dateForm.getDateValue(form);
+    }
   });
 });
 
-export { showPositionsList, manageModal, Alert };
+export { showPositionsList, manageModal, Alert, initializeAndStartTimer };

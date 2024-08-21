@@ -12,14 +12,14 @@ class UserDb {
   return JSON.parse(localStorage.getItem("playersDb"))
   }
   findIndexById(id) {
-    let db = this.getDataBase();
-    let indexFound = db.findIndex((user) => user.userId === id);
+    
+    let indexFound = this.list.findIndex((user) => user.userId === id);
     return indexFound;
   }
   addNewUser(userInfo) {
-    let userExists = this.findIndexById(userInfo.userId);
-    if (userExists !== -1) {
-      this.list[userExists].points += 10;
+    let userIndex = this.findIndexById(userInfo.userId);
+    if (userIndex !== -1) {
+      this.list[userIndex].points += 10;
       this.setDb();
       let pointsAddedAlert= new Alert("puntos añadidos a jugador existente")
       pointsAddedAlert.addAlertText();
@@ -37,15 +37,17 @@ class UserDb {
   updateDb(id, data) {
     let userIdx = this.findIndexById(id);
     if (userIdx !== -1) {
-      let userToUpdate = this.list[userIdx];
-      for (let key in data) {
-        if (userToUpdate.hasOwnProperty(key)) {
-          userToUpdate[key] = data[key];
-        }
-      }
+      Object.assign(this.list[userIdx], data)
       this.setDb();
-      console.log("hello");
+      console.log("userData updated");
     }
+  }
+
+  showAlert(message){
+    let alert= new Alert(message)
+    alert.addAlertText();
+    alert.changeState();
+    alert.closeEvent();
   }
 }
 
